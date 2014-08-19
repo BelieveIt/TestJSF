@@ -1,17 +1,23 @@
 package dao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
 public class StudentDaoImpl implements StudentDao{
 private JdbcTemplate jdbcTemplate;
@@ -73,7 +79,7 @@ public void updateStudentByStudentId(Student student){
 	namedParameterJdbcTemplate.update(sql, sqlParameterSource);
 	return;
 }
-@Override 
+@Override
 public int updateAgeOfStudentToAgeOfStudentByNameofStudent(Student student){
 	String sql = "update student set age = :age where name = :name";
 	SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(student);

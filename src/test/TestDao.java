@@ -19,42 +19,55 @@ public static void main(String[] args){
 	long insertIndex = student2.getStudentId();
 	System.out.println(insertIndex);
 	studentDaoImpl.insertStudent(student);
-	long insertIndex = student.getStudentId();
-	System.out.println(insertIndex);
+	long insertIndex2 = student.getStudentId();
+	System.out.println(insertIndex2);
 	**/
-	
-	/**
-	System.out.println(studentDaoImpl.queryStudentByStudentId(1));
 
+	/**
+	System.out.println(studentDaoImpl.queryStudentByStudentId(new Long(1)));
+	**/
+
+	/**
 	List<Student> students = studentDaoImpl.queryAllStudents();
 	for (Student student3 : students) {
 		System.out.println(student3);
 	}
-		
+	**/
+	/**
 	System.out.println(studentDaoImpl.queryCountOfAllStudents());
-	
+	**/
+
+	/**
 	List<Student> students = studentDaoImpl.queryStudentsByNameOfStudent(student2);
 	for (Student student3 : students) {
 		System.out.println(student3);
-	}	
-	
-	System.out.println(studentDaoImpl.queryCountOfStudentsByNameOfStudent(student2));
+	}
+	**/
 
+	/**
+	System.out.println(studentDaoImpl.queryCountOfStudentsByNameOfStudent(student2));
+	**/
+
+	/**
 	List<Student> students = studentDaoImpl.queryStudentsByNameAndAgeOfStudent(student2);
 	for (Student student3 : students) {
 		System.out.println(student3);
-	}	
-	
+	}
+	**/
+
+	/**
 	Student studentSelected = studentDaoImpl.queryStudentByStudentId(new Long(2));
 	studentSelected.setAge("100");
 	studentDaoImpl.updateStudentByStudentId(studentSelected);
-	
+	**/
+
+
 	Student studentModel = new Student();
 	studentModel.setName("Jim");
 	studentModel.setAge("3");
 	studentDaoImpl.updateAgeOfStudentToAgeOfStudentByNameofStudent(studentModel);
-	**/
-	
-	
+	/**	**/
+
+
 }
 }

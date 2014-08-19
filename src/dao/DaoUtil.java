@@ -8,7 +8,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 public class DaoUtil {
 public static DriverManagerDataSource getDataSource() {
-	InputStream inputStream = DaoUtil.class.getResourceAsStream("/jdbcOfMysql.properties");
+	InputStream inputStream = DaoUtil.class.getResourceAsStream("/jdbc.properties");
 	Properties properties = new Properties();
 	try {
 		properties.load(inputStream);
